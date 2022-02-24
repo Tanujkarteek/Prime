@@ -12,22 +12,29 @@ function Prime()
 		number = Number(document.getElementById("num").value);
         if(typeof number =='number')
         {
-            for(i=2; i <= number/2; i++)
-		    {
-			    if(number%i == 0)
-			    {
-				    flag = 1;
-				    break;
-			    }
-		    }
-		    if(flag == 0)
-		    {
-			    document.getElementById("dis").innerHTML=(number+" is a Prime Number");
-		    }
-		    else
-		    {
-			    document.getElementById("dis").innerHTML=(number+" is a Composite Number");
-		    }
+            if (number === 1) 
+            {
+                document.getElementById("dis").innerHTML=("1 is neither prime nor composite number");
+            }
+            else if (number >= 2) 
+            {
+                for (let i = 2; i < number; i++) 
+                {
+                    if (number % i == 0) 
+                    {
+                        flag = 1;
+                        break;
+                    }
+                }
+                if(flag == 0)
+		        {
+			        document.getElementById("dis").innerHTML=(number+" is a Prime Number");
+		        }
+		        else
+		        {
+			        document.getElementById("dis").innerHTML=(number+" is a Composite Number");
+		        }
+            }
         }
         else
         {
